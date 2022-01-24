@@ -1,8 +1,8 @@
 # README
 
-executar: bundler install
-em seguida fazer as migrações : db:migrate
-subir servidor local: rails server
+executar: bundler install e
+em seguida fazer as migrações : db:migrate 
+Subir servidor local: rails server
 cadastrar novo usuário
 
 
