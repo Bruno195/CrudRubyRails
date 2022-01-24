@@ -1,0 +1,81 @@
+<%= form_with(model: fornecedor) do |form| %>
+  <% if fornecedor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fornecedor.errors.count, "error") %> prohibited this fornecedor from being saved:</h2>
+
+      <ul>
+        <% fornecedor.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sobrenome %>
+    <%= form.text_field :sobrenome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dataDeNascimento %>
+    <%= form.text_field :dataDeNascimento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dataDeAdmissao %>
+    <%= form.text_field :dataDeAdmissao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :salario %>
+    <%= form.text_field :salario %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  
+
+<p id="notice"><%= notice %></p>
+
+<h1>Fornecedores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Datadenascimento</th>
+      <th>Datadeadmissao</th>
+      <th>Salario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fornecedores.each do |fornecedor| %>
+      <tr>
+        <td><%= fornecedor.nome %></td>
+        <td><%= fornecedor.sobrenome %></td>
+        <td><%= fornecedor.dataDeNascimento %></td>
+        <td><%= fornecedor.dataDeAdmissao %></td>
+        <td><%= fornecedor.salario %></td>
+        <td><%= link_to 'Show', fornecedor %></td>
+        <td><%= link_to 'Edit', edit_fornecedor_path(fornecedor) %></td>
+        <td><%= link_to 'Destroy', fornecedor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fornecedor', new_fornecedor_path %>
+  
+  
+<% end %>
